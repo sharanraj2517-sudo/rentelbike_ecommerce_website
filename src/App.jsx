@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "./Components/Home.jsx";
-import About from "./Components/About.jsx";
+import Home from "./components/Home.jsx";
+import About from "./components/About.jsx";
 
 function App() {
   return (
