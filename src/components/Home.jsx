@@ -28,25 +28,24 @@ const Home = () => {
             <h2>RENT A MOTORCYCLE</h2>
 
             <div className="rented">
+              <select>
+                <option>Select City</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+              </select>
 
-            <select>
-              <option>Select City</option>
-              <option value="Hyderabad">Hyderabad</option>
-              <option value="Bangalore">Bangalore</option>
-              <option value="Chennai">Chennai</option>
-              <option value="Mumbai">Mumbai</option>
-            </select>
+              <select>
+                <option>Select Categories</option>
+                <option value="Scooter">Scooter</option>
+                <option value="Sports Bike">Sports Bike</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Cruiser">Cruiser</option>
+              </select>
 
-            <select>
-              <option>Select Categories</option>
-              <option value="Scooter">Scooter</option>
-              <option value="Sports Bike">Sports Bike</option>
-              <option value="Adventure">Adventure</option>
-              <option value="Cruiser">Cruiser</option>
-            </select>
-
-            <input type="datetime-local" />
-            <input type="datetime-local" />
+              <input type="datetime-local" />
+              <input type="datetime-local" />
             </div>
 
             {/* FIXED: Search button with navigation */}
