@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
+import Footer from "./Footer";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -73,6 +74,7 @@ const Home = () => {
           <div className="icon-circle">🎧</div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
