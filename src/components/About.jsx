@@ -17,3 +17,4 @@ Why we do choose relax rent bikes, they are providing very quality and well main
     </>
   )
 }
+export default about;
