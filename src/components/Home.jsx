@@ -16,8 +16,6 @@ const Home = () => {
           />
         </video>
 
-        <button onClick={() => navigate("/bikes")}>SEARCH NOW</button>
-
         <div className="hero-content">
           <h1 className="hero-title">
             THE RIDE
@@ -39,7 +37,8 @@ const Home = () => {
             <input type="datetime-local" />
             <input type="datetime-local" />
 
-            <button>SEARCH NOW</button>
+            {/* FIXED: Search button with navigation */}
+            <button onClick={() => navigate("/bikes")}>SEARCH NOW</button>
           </div>
         </div>
       </div>
