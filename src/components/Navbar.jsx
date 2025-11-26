@@ -5,7 +5,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="logo">Relax Bikes</div>
+      <div className="nav-left">Relax Bikes</div>
 
       <ul className="nav-links">
         <li>
@@ -21,7 +21,7 @@ const Navbar = () => {
           <Link to="/booking">Booking</Link>
         </li>
         <li>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </nav>
