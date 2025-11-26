@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <h1>ihihihii</h1>
+
       <div className="hero-section">
         <video autoPlay loop muted className="bg-video">
           <source
