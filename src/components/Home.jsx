@@ -12,7 +12,7 @@ const Home = () => {
       <div className="hero-section">
         <video autoPlay loop muted className="bg-video">
           <source
-            src="https://videos.pexels.com/video-files/856527/856527-hd_1280_720_30fps.mp4"
+            src="https://www.relaxbikes.com/asset/v2/images/relaxbikes.mp4"
             type="video/mp4"
           />
         </video>
