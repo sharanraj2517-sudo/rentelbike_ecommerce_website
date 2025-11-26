@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* HERO SECTION */}
@@ -12,6 +15,8 @@ const Home = () => {
             type="video/mp4"
           />
         </video>
+
+        <button onClick={() => navigate("/bikes")}>SEARCH NOW</button>
 
         <div className="hero-content">
           <h1 className="hero-title">

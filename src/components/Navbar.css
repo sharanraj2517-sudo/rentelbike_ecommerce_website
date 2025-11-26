@@ -1,4 +1,8 @@
 .navbar {
+  z-index: 1000; /* increase priority */
+}
+
+.navbar {
   width: 100%;
   padding: 20px 40px;
   display: flex;
@@ -14,14 +18,15 @@
 
 .nav-links {
   display: flex;
-  gap: 40px;
   list-style: none;
+  display: flex;
+  gap: 50px;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .nav-links a:hover {
