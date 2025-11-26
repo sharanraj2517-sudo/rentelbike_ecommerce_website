@@ -27,6 +27,8 @@ const Home = () => {
           <div className="rent-box">
             <h2>RENT A MOTORCYCLE</h2>
 
+            <div className="rented">
+
             <select>
               <option>Select City</option>
               <option value="Hyderabad">Hyderabad</option>
@@ -45,6 +47,7 @@ const Home = () => {
 
             <input type="datetime-local" />
             <input type="datetime-local" />
+            </div>
 
             {/* FIXED: Search button with navigation */}
             <button onClick={() => navigate("/bikes")}>SEARCH NOW</button>
