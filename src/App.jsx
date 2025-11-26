@@ -8,7 +8,7 @@ import Bikes from "./components/Bikes";
 import Booking from "./components/Booking";
 import Contact from "./components/Contact";
 
-const App = () => {
+function App() {
   return (
     <Router>
       <Navbar />
@@ -22,6 +22,6 @@ const App = () => {
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
