@@ -100,15 +100,70 @@
   color: #0c58c0;
 }
 
+/* ⭐ TEAM TITLE */
+.team-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  color: #1a73e8;
+  margin-left: 100px;
+}
+
+/* ⭐ TEAM GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 0 20px;
+  margin-left: 100px;
+}
+
+/* ⭐ TEAM CARD */
+.team-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+}
+
+.team-card img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.team-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* ⭐ RESPONSIVE */
 @media (max-width: 900px) {
-  .city-grid {
+  .team-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
   }
 }
 
 @media (max-width: 600px) {
-  .city-grid {
+  .team-grid {
     grid-template-columns: 1fr;
   }
 }

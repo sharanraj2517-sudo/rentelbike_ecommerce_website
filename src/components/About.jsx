@@ -68,6 +68,40 @@ const About = () => {
         </div>
       </div>
 
+      {/* ⭐ MEET OUR TEAM */}
+      <h1 className="team-title">MEET OUR TEAM</h1>
+
+      <div className="team-grid">
+        {[
+          {
+            name: "Sanjay Kumar",
+            role: "Founder & CEO",
+            img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+          },
+          {
+            name: "Rocky",
+            role: "Operations Manager",
+            img: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg",
+          },
+          {
+            name: "Priya",
+            role: "Lead Mechanic",
+            img: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg",
+          },
+          {
+            name: "Divya Nair",
+            role: "Customer Support",
+            img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+          },
+        ].map((member, index) => (
+          <div className="team-card" key={index}>
+            <img src={member.img} alt={member.name} />
+            <h3>{member.name}</h3>
+            <p>{member.role}</p>
+          </div>
+        ))}
+      </div>
+
       <Footer />
     </>
   );
