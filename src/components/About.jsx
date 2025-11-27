@@ -4,25 +4,21 @@ import Footer from "./Footer";
 
 const About = () => {
   const cities = [
-    { name: "COIMBATORE", img: "/city-icons/gate.png" },
-    { name: "DELHI", img: "/city-icons/building.png" },
-    { name: "MUMBAI", img: "/city-icons/gate.png" },
-    { name: "PONDICHERRY", img: "/city-icons/building.png" },
-    { name: "TRICHY", img: "/city-icons/gate.png" },
-    { name: "BANGALORE", img: "/city-icons/building.png" },
-    { name: "HYDERABAD", img: "/city-icons/gate.png" },
-    { name: "GOA", img: "/city-icons/building.png" },
+    { name: "COIMBATORE", img: "mumbai.png" },
+    { name: "DELHI", img: "delhi.png" },
+    { name: "MUMBAI", img: "mumbai.png" },
+    { name: "PONDICHERRY", img: "pondy.png" },
+    { name: "TRICHY", img: "tric.png" },
+    { name: "BANGALORE", img: "bengaluru.png" },
+    { name: "HYDERABAD", img: "hyderabad.png" },
+    { name: "GOA", img: "goa.png" },
   ];
 
   return (
     <>
       {/* ⭐ TOP BACKGROUND IMAGE */}
       <div className="about-hero">
-        <img
-          src="https://images.unsplash.com/photo-1520974741544-8a529f0a1a9e"
-          alt="Bikes Banner"
-          className="about-hero-img"
-        />
+        <img src="bikes.avif" alt="Bikes Banner" className="about-hero-img" />
       </div>
 
       {/* ⭐ CONTENT SECTION */}
