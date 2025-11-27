@@ -1,15 +1,16 @@
 import React from "react";
+// import { useNavigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import Footer from "./Footer";
 
 const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+
+  console.log("ll")
 
   return (
     <>
-      {/* HERO SECTION */}
-
       <div className="hero-section">
         <video autoPlay loop muted className="bg-video">
           <source
