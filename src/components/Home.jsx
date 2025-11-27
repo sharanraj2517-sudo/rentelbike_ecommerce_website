@@ -1,11 +1,9 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import Footer from "./Footer";
 
 const Home = () => {
-  // const navigate = useNavigate();
 
   console.log("ll")
 
@@ -50,13 +48,11 @@ const Home = () => {
               <input type="datetime-local" />
             </div>
 
-            {/* FIXED: Search button with navigation */}
             <button onClick={() => navigate("/bikes")}>SEARCH NOW</button>
           </div>
         </div>
       </div>
 
-      {/* WHY RIDE SECTION */}
       <div className="why-container">
         <h1 className="why-title">WHY RIDE WITH RELAX BIKES?</h1>
         <h3 className="why-sub">RELAX RENTALS BIKES</h3>

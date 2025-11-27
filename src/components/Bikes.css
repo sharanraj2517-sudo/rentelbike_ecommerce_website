@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== BACKGROUND ===== */
+.bikes-page {
+  background: url("/bikes/bikes2.avif") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 120px; /* push below navbar */
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-size: 48px;
+  color: #1e66ff;
+}
+.header p {
+  font-size: 18px;
+  color: #eee;
+}
+
+/* ===== GRID ===== */
+.bikes-section {
+  padding: 60px 40px;
+}
+.bikes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+/* ===== BIKE CARD ===== */
+.bike-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.bike-card:hover {
+  transform: scale(1.05);
+}
+
+.bike-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.bike-card h3 {
+  color: #003b99;
+  margin-top: 10px;
+}
+
+.price {
+  color: #1e66ff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ===== SPECS ===== */
+.bike-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 15px;
+  margin-top: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.bike-specs div {
+  background: #f3f7ff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+}
+
+.bike-specs span {
+  color: #0445ad;
+  font-weight: 700;
+}
+
+.bike-specs i {
+  color: #1e66ff;
+}
+
+.book-btn {
+  margin-top: 14px;
+  padding: 10px 20px;
+  background: #1e66ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.book-btn:hover {
+  background: #003b99;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .bikes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .bikes-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,55 +1,110 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./About.css";
 import Footer from "./Footer";
 
-function about() {
-
+const About = () => {
+  const cities = [
+    { name: "COIMBATORE", img: "mumbai.png" },
+    { name: "DELHI", img: "delhi.png" },
+    { name: "MUMBAI", img: "mumbai.png" },
+    { name: "PONDICHERRY", img: "pondy.png" },
+    { name: "TRICHY", img: "tric.png" },
+    { name: "BANGALORE", img: "bengaluru.png" },
+    { name: "HYDERABAD", img: "hyderabad.png" },
+    { name: "GOA", img: "goa.png" },
+  ];
 
   return (
     <>
-      <div>
-        <div>
-          <image>
-            <source
-              src="https://www.relaxbikes.com/asset/v2/js/wow.init.js"
-              type="jpeg"
-            />
-          </image>
-        </div>
-        <div>
-          <h3>LOWEST PRICE GUARANTEE</h3>
-          <p>price Guarantee
-            Why we do choose relax rent bikes, they are providing very quality and well maintained bikes. We are provide recent models stating from 2017 to 2019 bikes. We have lot of different type of bikes you can choose your dream bikes.</p>
-          <h3>ROADSIDE ASSITANCE</h3>
-          <p>Also they support road side assistance round the clock, which means they give confidence to you travel a lot.</p>
-          <h3>HELMET</h3>
-          <p>They are providing latest bikes with very lowest price, economically is a best choice bike is reasonable rate. Most friendly usage. We are guarantee to say bike cost not dent your pocket. You can compare all the channels bike is good choice in your transport.</p>
-          <h3>MINIMUM PAPER WORK</h3>
-          <p>If we rent a bike they providing free quality helmet, not only driver if we need helmet for pillions they provide additional helmet without any cost</p>
-          <h3>QUALITY MOTORCYCLES</h3>
-          <p>If you need a booking a bike just pay 1000 in advance and book the bikes, if their our service is not satisfied we will return your booking payment</p>
-          <h3>SERVICEABILITY</h3>
-          <p>Hassle free rent bikes means relax rent bikes</p>
-          <h3>WE GIVE YOU OPTON</h3>
-          <p>You should be submit any kind of one original id proof and show your driving licence its enough for you can take a bike.</p>
-          <h3>VERIFIED BIKES</h3>
-          <p>Why take a risk of being in a trap of bikes you don’t know? Now rent with our vast network of trusted and verified bikes always</p>
+      {/* ⭐ TOP BACKGROUND IMAGE */}
+      <div className="about-hero">
+        <img src="bikes.avif" alt="Bikes Banner" className="about-hero-img" />
+      </div>
 
-          <div>
-            <h3>LOW SECURITY DEPOSIT</h3>
-            <p>Our deposit are as low as Rs.1000/- So just ride out confidence. Renting a bike is not going to make a dent in your pocket.</p>
-            <h3>100% MONY BACK GAURANTEE</h3>
-            <p>In case, We could not match your expectations, Just ask and we shall refund you 100 % . Yes that’s a promise we always keep above all.</p>
-            <ul>BENIFITS FOR CUSTOMERS
-              <li>We have distinctly listed all the bikes with their specifications which makes it easy to compare for best prices and best deals.</li>
-              <li></li>
-            </ul>
-          </div>
+      {/* ⭐ CONTENT SECTION */}
+      <div className="about-container">
+        <h1 className="about-title">LOWEST PRICE GUARANTEE</h1>
+        <p className="about-text">
+          We provide high-quality, well-maintained bikes from recent models
+          ranging from 2017 to 2019. Choose your dream bike and enjoy the best
+          rental price.
+        </p>
+
+        <h2 className="about-sub">ROADSIDE ASSISTANCE</h2>
+        <p className="about-text">
+          24/7 roadside assistance ensures safe and comfortable travel.
+        </p>
+
+        <h2 className="about-sub">HELMETS</h2>
+        <p className="about-text">
+          We provide premium helmets free for both rider and pillion.
+        </p>
+
+        <h2 className="about-sub">MINIMUM PAPER WORK</h2>
+        <p className="about-text">
+          Quick documentation and easy verification process.
+        </p>
+
+        <h2 className="about-sub">QUALITY MOTORCYCLES</h2>
+        <p className="about-text">
+          Regular servicing ensures your rental bike always performs perfectly.
+        </p>
+
+        <h2 className="about-sub">SERVICEABILITY</h2>
+        <p className="about-text">
+          Hassle-free booking, great support, and smooth riding experience.
+        </p>
+
+        {/* ⭐ FIND US IN YOUR CITY */}
+        <h1 className="city-title">FIND US IN YOUR CITY</h1>
+
+        <div className="city-grid">
+          {cities.map((city, index) => (
+            <div className="city-box upgraded" key={index}>
+              <img src={city.img} alt={city.name} />
+              <p>{city.name}</p>
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* ⭐ MEET OUR TEAM */}
+      <h1 className="team-title">MEET OUR TEAM</h1>
+
+      <div className="team-grid">
+        {[
+          {
+            name: "Sanjay Kumar",
+            role: "Founder & CEO",
+            img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+          },
+          {
+            name: "Rocky",
+            role: "Operations Manager",
+            img: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg",
+          },
+          {
+            name: "Priya",
+            role: "Lead Mechanic",
+            img: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg",
+          },
+          {
+            name: "Divya Nair",
+            role: "Customer Support",
+            img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+          },
+        ].map((member, index) => (
+          <div className="team-card" key={index}>
+            <img src={member.img} alt={member.name} />
+            <h3>{member.name}</h3>
+            <p>{member.role}</p>
+          </div>
+        ))}
+      </div>
+
       <Footer />
     </>
-  )
-}
-export default about;
+  );
+};
+
+export default About;
