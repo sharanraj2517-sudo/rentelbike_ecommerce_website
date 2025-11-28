@@ -4,10 +4,7 @@ import "./Home.css";
 import Footer from "./Footer";
 
 const Home = () => {
-
-  console.log("ll")
-
-  return (
+   return (
     <>
       <div className="hero-section">
         <video autoPlay loop muted className="bg-video">

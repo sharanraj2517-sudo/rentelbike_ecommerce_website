@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./About.css";
 import Footer from "./Footer";
 
@@ -11,53 +12,57 @@ const About = () => {
     { name: "TRICHY", img: "tric.png" },
     { name: "BANGALORE", img: "bengaluru.png" },
     { name: "HYDERABAD", img: "hyderabad.png" },
-    { name: "GOA", img: "goa.png" },
+    { name: "GOA", img: "goa.png" }
+  ];
+
+  const team = [
+    {
+      name: "Sanjay Kumar",
+      role: "Founder & CEO",
+      img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
+    },
+    {
+      name: "Rocky",
+      role: "Operations Manager",
+      img: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg"
+    },
+    {
+      name: "Priya",
+      role: "Lead Mechanic",
+      img: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg"
+    },
+    {
+      name: "Divya Nair",
+      role: "Customer Support",
+      img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg"
+    }
   ];
 
   return (
     <>
-      {/* ⭐ TOP BACKGROUND IMAGE */}
       <div className="about-hero">
-        <img src="bikes.avif" alt="Bikes Banner" className="about-hero-img" />
+        <img src="bikes.avif" alt="Bike Banner" className="about-hero-img" />
       </div>
 
-      {/* ⭐ CONTENT SECTION */}
       <div className="about-container">
         <h1 className="about-title">LOWEST PRICE GUARANTEE</h1>
         <p className="about-text">
-          We provide high-quality, well-maintained bikes from recent models
-          ranging from 2017 to 2019. Choose your dream bike and enjoy the best
-          rental price.
+          We provide high-quality and well-maintained bikes at the best price.
         </p>
 
         <h2 className="about-sub">ROADSIDE ASSISTANCE</h2>
-        <p className="about-text">
-          24/7 roadside assistance ensures safe and comfortable travel.
-        </p>
+        <p className="about-text">We offer 24/7 roadside assistance.</p>
 
         <h2 className="about-sub">HELMETS</h2>
-        <p className="about-text">
-          We provide premium helmets free for both rider and pillion.
-        </p>
+        <p className="about-text">Free helmets for rider and pillion.</p>
 
         <h2 className="about-sub">MINIMUM PAPER WORK</h2>
-        <p className="about-text">
-          Quick documentation and easy verification process.
-        </p>
+        <p className="about-text">Quick documentation, easy process.</p>
 
         <h2 className="about-sub">QUALITY MOTORCYCLES</h2>
-        <p className="about-text">
-          Regular servicing ensures your rental bike always performs perfectly.
-        </p>
+        <p className="about-text">Regular service & maintenance.</p>
 
-        <h2 className="about-sub">SERVICEABILITY</h2>
-        <p className="about-text">
-          Hassle-free booking, great support, and smooth riding experience.
-        </p>
-
-        {/* ⭐ FIND US IN YOUR CITY */}
         <h1 className="city-title">FIND US IN YOUR CITY</h1>
-
         <div className="city-grid">
           {cities.map((city, index) => (
             <div className="city-box upgraded" key={index}>
@@ -68,32 +73,9 @@ const About = () => {
         </div>
       </div>
 
-      {/* ⭐ MEET OUR TEAM */}
       <h1 className="team-title">MEET OUR TEAM</h1>
-
       <div className="team-grid">
-        {[
-          {
-            name: "Sanjay Kumar",
-            role: "Founder & CEO",
-            img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
-          },
-          {
-            name: "Rocky",
-            role: "Operations Manager",
-            img: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg",
-          },
-          {
-            name: "Priya",
-            role: "Lead Mechanic",
-            img: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg",
-          },
-          {
-            name: "Divya Nair",
-            role: "Customer Support",
-            img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
-          },
-        ].map((member, index) => (
+        {team.map((member, index) => (
           <div className="team-card" key={index}>
             <img src={member.img} alt={member.name} />
             <h3>{member.name}</h3>
@@ -101,7 +83,6 @@ const About = () => {
           </div>
         ))}
       </div>
-
       <Footer />
     </>
   );

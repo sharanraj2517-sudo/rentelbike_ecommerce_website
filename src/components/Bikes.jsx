@@ -1,77 +1,148 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Bikes.css";
-import Footer from "./Footer";
+
+const bikeData = [
+  {
+    img: "/bikes/new r.avif",
+    name: "Royal Enfield Classic 350",
+    price: "₹999 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "346cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "35 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "120 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+  {
+    img: "/bikes/mt.avif",
+    name: "Yamaha MT 15",
+    price: "₹899 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "155cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "45 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "130 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+  {
+    img: "/bikes/honda.avif",
+    name: "Honda Activa 6G",
+    price: "₹499 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "110cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "50 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "85 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+  {
+    img: "/bikes/duke.avif",
+    name: "KTM Duke 200",
+    price: "₹999 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "199cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "35 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "138 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+  {
+    img: "/bikes/pulsar.avif",
+    name: "Bajaj Pulsar 220",
+    price: "₹799 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "199.5cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "40 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "160 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+  {
+    img: "/bikes/him.avif",
+    name: "Royal Enfield Himalayan",
+    price: "₹1199 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "411cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "30 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "140 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+  {
+    img: "/bikes/310.avif",
+    name: "Apache RR310",
+    price: "₹899 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "312.2cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "35 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "180 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+  {
+    img: "/bikes/rc.avif",
+    name: "RC 390",
+    price: "₹1299 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "373.27cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "25 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "170 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+  {
+    img: "/bikes/400.avif",
+    name: "Dominar 400",
+    price: "₹1200 / Day",
+    specs: [
+      { icon: "fa-gauge", label: "Engine", value: "373.3cc" },
+      { icon: "fa-gas-pump", label: "Mileage", value: "25 km/l" },
+      { icon: "fa-bolt", label: "Speed", value: "160 km/h" },
+      { icon: "fa-fire-flame-curved", label: "Fuel", value: "Petrol" },
+    ],
+  },
+];
 
 function Bikes() {
-
+  const navigate = useNavigate();
 
   return (
-    <>
-      <div className="img">
-        <image>
-          <source
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7G2vsjBXwU2PHRS_uCI1HqGVAD1eo6u6SYR9CnwjRa9Of5tZmMe29GV0&s"
-          />
-        </image>
+    <div className="bikes-page">
+      <div className="header">
+        <h1>OUR BIKES</h1>
+        <p>Select from our premium fleet of well-maintained rental bikes</p>
       </div>
-      <div className="search fiels"> 
-        <div className="form-group">
-          <label>Select City</label>
-          <select className="input">
-            <option>Select City</option>
-            <option>Mumbai</option>
-            <option>Chennai</option>
-            <option>Hyderabad</option>
-            <option>Bangalore</option>
-          </select>
 
-          <div className="form-group">
-            <label>Select Categories</label>
-            <select className="input">
-              <option>Select Category</option>
-              <option>Geared</option>
-              <option>Non-Geared</option>
-              <option>Sports</option>
-            </select>
-          </div>
+      <section className="bikes-section">
+        <div className="bikes-grid">
+          {bikeData.map((bike, index) => (
+            <div className="bike-card" key={index}>
+              <img src={bike.img} alt={bike.name} />
+              <h3>{bike.name}</h3>
+              <p className="price">{bike.price}</p>
 
-          <div className="form-group">
-            <label>Pick Up</label>
-            <input type="datetime-local" className="input" />
-          </div>
+              <div className="bike-specs">
+                {bike.specs.map((s, i) => (
+                  <div key={i}>
+                    <i className={`fa-solid ${s.icon}`}></i>
+                    {s.label}: <span>{s.value}</span>
+                  </div>
+                ))}
+              </div>
 
-          <div className="form-group">
-            <label>Return</label>
-            <input type="datetime-local" className="input" />
-          </div>
-
-          <button className="search-btn">SEARCH BIKES</button>
+              <button
+                className="book-btn"
+                onClick={() => navigate("/booking")}
+              >
+                Book Now
+              </button>
+            </div>
+          ))}
         </div>
- </div>
-
- <div>
-  <div>
-    <image>
-      <source
-      src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bikewale.com%2Fbajaj-bikes%2Fplatina-100%2F&psig=AOvVaw0me-IXrOuczX8XCQ3_QZUI&ust=1764313692234000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjUmenikZEDFQAAAAAdAAAAABAJ" 
-      />
-      <h3>Platina</h3>
-       </image>
-  </div>
-  <div>
-    <p>Available City : Tirupur   Number of Gears : 4 gears   Helmet Provide Company : Yes   Fuel : Yourself   Insurance Policy : Yes   Original Needed Proof : Yes   Xerox Needed Proof : No   Rented Bikes Delivery at your Place : near by tirupur   Rs 1000/- for Security deposit Pay at time of pickup the bike : Yes   Customer is liable to pay In case of damage to the vehicle : Yes   KM Per day Limit : 250 km   Extra helmet Provide Company : Yes   Extra km charges : Rs 4/- per km   Model : 2017   Extra hourly charges : 70/- per hour   Deliver at your place : If Available   </p>
-    <button>BOOK A BIKE</button>
-    <button>VEIW DETAILS</button>
-  </div>
-  <div>
-    <h3>₹ 236.00</h3>
-  </div>
- </div>
-
-      <Footer />
-    </>
-
-
-  )
+      </section>
+    </div>
+  );
 }
+
 export default Bikes;
