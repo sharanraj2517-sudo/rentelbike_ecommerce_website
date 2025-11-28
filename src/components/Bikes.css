@@ -1,126 +1,121 @@
-* {
+body {
+  background: #f5f8ff !important;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-/* ===== BACKGROUND ===== */
-.bikes-page {
-  background: url("/bikes/bikes2.avif") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  padding-top: 120px; /* push below navbar */
-}
-
-/* ===== HEADER ===== */
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.header h1 {
-  font-size: 48px;
-  color: #1e66ff;
-}
-.header p {
-  font-size: 18px;
-  color: #eee;
-}
-
-/* ===== GRID ===== */
-.bikes-section {
-  padding: 60px 40px;
-}
-.bikes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
-}
-
-/* ===== BIKE CARD ===== */
-.bike-card {
-  background: rgba(255, 255, 255, 0.88);
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
-}
-.bike-card:hover {
-  transform: scale(1.05);
-}
-
-.bike-card img {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
+  overflow-x: hidden;
 }
 
-.bike-card h3 {
-  color: #003b99;
-  margin-top: 10px;
+.bikes-container {
+  width: 100%;
+  padding: 120px 40px 50px 40px;
+  background: #f5f8ff;
+  min-height: 100vh;
 }
 
-.price {
+.navbar {
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(10px);
+}
+.nav-links a {
+  color: white !important;
+}
+
+/* Card specs fix */
+.spec-grid div {
+  background: #e6eeff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0b2d63;
+}
+
+.spec-grid span {
   color: #1e66ff;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-/* ===== SPECS ===== */
-.bike-specs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 15px;
-  margin-top: 12px;
-  text-align: left;
-  font-size: 14px;
-}
-
-.bike-specs div {
-  background: #f3f7ff;
-  padding: 8px 10px;
-  border-radius: 6px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #333;
-}
-
-.bike-specs span {
-  color: #0445ad;
   font-weight: 700;
 }
 
-.bike-specs i {
+.bikes-title {
+  text-align: center;
+  font-size: 48px;
   color: #1e66ff;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.bikes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.bike-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.bike-card:hover {
+  transform: scale(1.04);
+}
+
+.bike-img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.bike-name {
+  font-size: 22px;
+  margin-top: 15px;
+  color: #0b2d63;
+  font-weight: 700;
+}
+
+.bike-price {
+  font-size: 20px;
+  margin-top: 5px;
+  color: #1e66ff;
+  font-weight: 600;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.spec-grid div {
+  background: #eef4ff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.spec-grid span {
+  color: #1e66ff;
+  font-weight: 700;
 }
 
 .book-btn {
-  margin-top: 14px;
-  padding: 10px 20px;
+  width: 100%;
+  padding: 12px;
+  border: none;
   background: #1e66ff;
   color: white;
-  border: none;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 8px;
   cursor: pointer;
 }
-.book-btn:hover {
-  background: #003b99;
-}
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .bikes-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .bikes-grid {
-    grid-template-columns: 1fr;
-  }
+.book-btn:hover {
+  background: #0044c4;
 }

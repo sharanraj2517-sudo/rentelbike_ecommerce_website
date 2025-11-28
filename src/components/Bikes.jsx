@@ -1,77 +1,159 @@
 import React from "react";
-import "./Bikes.css";
+import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
+import "./Bikes.css";
 
-function Bikes() {
+const bikesData = [
+  {
+    id: 1,
+    name: "Royal Enfield Classic 350",
+    price: 999,
+    img: "/images/classic350.jpg",
+    engine: "346cc",
+    mileage: "35 km/l",
+    speed: "120 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 2,
+    name: "Yamaha MT-15",
+    price: 899,
+    img: "/images/mt15.jpg",
+    engine: "155cc",
+    mileage: "45 km/l",
+    speed: "130 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 3,
+    name: "Honda Activa 6G",
+    price: 499,
+    img: "/images/activa6g.jpg",
+    engine: "110cc",
+    mileage: "50 km/l",
+    speed: "85 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 4,
+    name: "KTM Duke 250",
+    price: 1199,
+    img: "/images/duke250.jpg",
+    engine: "248cc",
+    mileage: "35 km/l",
+    speed: "148 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 5,
+    name: "Bajaj Pulsar NS200",
+    price: 899,
+    img: "/images/ns200.jpg",
+    engine: "199cc",
+    mileage: "36 km/l",
+    speed: "140 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 6,
+    name: "KTM Duke 390",
+    price: 1499,
+    img: "/images/duke390.jpg",
+    engine: "373cc",
+    mileage: "25 km/l",
+    speed: "160 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 7,
+    name: "TVS Apache RR310",
+    price: 999,
+    img: "/images/rr310.jpg",
+    engine: "310cc",
+    mileage: "33 km/l",
+    speed: "160 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 8,
+    name: "RE Himalayan",
+    price: 1299,
+    img: "/images/himalayan.jpg",
+    engine: "411cc",
+    mileage: "30 km/l",
+    speed: "145 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 9,
+    name: "Bajaj Dominar 400",
+    price: 1200,
+    img: "/images/dominar400.jpg",
+    engine: "373cc",
+    mileage: "25 km/l",
+    speed: "160 km/h",
+    fuel: "Petrol",
+  },
+  {
+    id: 10,
+    name: "Hero Splendor Plus",
+    price: 350,
+    img: "/images/splendor.jpg",
+    engine: "97cc",
+    mileage: "60 km/l",
+    speed: "90 km/h",
+    fuel: "Petrol",
+  },
+];
 
+const Bikes = () => {
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="img">
-        <image>
-          <source
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7G2vsjBXwU2PHRS_uCI1HqGVAD1eo6u6SYR9CnwjRa9Of5tZmMe29GV0&s"
-          />
-        </image>
-      </div>
-      <div className="search fiels"> 
-        <div className="form-group">
-          <label>Select City</label>
-          <select className="input">
-            <option>Select City</option>
-            <option>Mumbai</option>
-            <option>Chennai</option>
-            <option>Hyderabad</option>
-            <option>Bangalore</option>
-          </select>
+      <Navbar />
 
-          <div className="form-group">
-            <label>Select Categories</label>
-            <select className="input">
-              <option>Select Category</option>
-              <option>Geared</option>
-              <option>Non-Geared</option>
-              <option>Sports</option>
-            </select>
-          </div>
+      <div className="bikes-container">
+        <h1 className="bikes-title">OUR BIKES</h1>
 
-          <div className="form-group">
-            <label>Pick Up</label>
-            <input type="datetime-local" className="input" />
-          </div>
+        <div className="bikes-grid">
+          {bikesData.map((bike) => (
+            <div key={bike.id} className="bike-card">
+              <img src={bike.img} alt={bike.name} className="bike-img" />
 
-          <div className="form-group">
-            <label>Return</label>
-            <input type="datetime-local" className="input" />
-          </div>
+              <h2 className="bike-name">{bike.name}</h2>
+              <p className="bike-price">₹{bike.price} / Day</p>
 
-          <button className="search-btn">SEARCH BIKES</button>
+              <div className="spec-grid">
+                <div>
+                  Engine: <span>{bike.engine}</span>
+                </div>
+                <div>
+                  Mileage: <span>{bike.mileage}</span>
+                </div>
+                <div>
+                  Speed: <span>{bike.speed}</span>
+                </div>
+                <div>
+                  Fuel: <span>{bike.fuel}</span>
+                </div>
+              </div>
+
+              <button
+                className="book-btn"
+                onClick={() => navigate("/booking", { state: bike })}
+              >
+                Book Now
+              </button>
+            </div>
+          ))}
         </div>
- </div>
-
- <div>
-  <div>
-    <image>
-      <source
-      src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bikewale.com%2Fbajaj-bikes%2Fplatina-100%2F&psig=AOvVaw0me-IXrOuczX8XCQ3_QZUI&ust=1764313692234000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjUmenikZEDFQAAAAAdAAAAABAJ" 
-      />
-      <h3>Platina</h3>
-       </image>
-  </div>
-  <div>
-    <p>Available City : Tirupur   Number of Gears : 4 gears   Helmet Provide Company : Yes   Fuel : Yourself   Insurance Policy : Yes   Original Needed Proof : Yes   Xerox Needed Proof : No   Rented Bikes Delivery at your Place : near by tirupur   Rs 1000/- for Security deposit Pay at time of pickup the bike : Yes   Customer is liable to pay In case of damage to the vehicle : Yes   KM Per day Limit : 250 km   Extra helmet Provide Company : Yes   Extra km charges : Rs 4/- per km   Model : 2017   Extra hourly charges : 70/- per hour   Deliver at your place : If Available   </p>
-    <button>BOOK A BIKE</button>
-    <button>VEIW DETAILS</button>
-  </div>
-  <div>
-    <h3>₹ 236.00</h3>
-  </div>
- </div>
+      </div>
 
       <Footer />
     </>
+  );
+};
 
-
-  )
-}
 export default Bikes;
